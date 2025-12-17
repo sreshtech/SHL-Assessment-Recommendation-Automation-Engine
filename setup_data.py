@@ -1,0 +1,31 @@
+import os
+
+# Create the 'data' folder
+folder = "data"
+if not os.path.exists(folder):
+    os.makedirs(folder)
+    print(f"Created folder: {folder}")
+
+# The CSV data
+csv_content = """assessment_id,assessment_name,skills,job_level,industry,duration,test_type
+A1,Verify G+,Numerical Reasoning;Logical Reasoning,Entry,IT,36,Aptitude
+A2,OPQ32,Personality;Behavior,All,All,25,Personality
+A3,Coding Assessment,Python;Java;DSA,Mid,IT,60,Technical
+A4,Data Analysis Test,SQL;Data Interpretation;Statistics,Entry,IT,45,Technical
+A5,Leadership Assessment,Leadership;Decision Making;Communication,Senior,All,40,Behavioral
+A6,Cognitive Ability Test,Critical Thinking;Problem Solving,Entry,All,30,Aptitude
+A7,Full Stack Developer Test,JavaScript;React;NodeJS,Mid,IT,60,Technical
+A8,Communication Skills Test,Verbal Ability;Communication,Entry,All,30,Behavioral
+A9,Managerial Judgment Test,Decision Making;People Management,Senior,All,45,Behavioral
+A10,Advanced Analytics Test,Python;SQL;Statistics;Data Modeling,Mid,IT,60,Technical
+A11,Personality & Motivation Test,Personality;Motivation;Behavior,All,All,25,Personality
+A12,Critical Thinking Test,Analytical Thinking;Problem Solving;Logical Reasoning,Entry,All,30,Aptitude
+A13,Executive Leadership Test,Leadership;Decision Making;Strategic Thinking,Senior,All,50,Behavioral"""
+
+# Create the file
+file_path = os.path.join(folder, "shl_catalogue.csv")
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(csv_content)
+
+print(f"✅ Success! File created at: {file_path}")
+print("You can now run your Streamlit app.")
